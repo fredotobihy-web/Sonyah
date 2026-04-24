@@ -232,7 +232,7 @@
             <div class="date-message"><i class="fas fa-calendar-alt"></i> Un jour inoubliable, mon amour</div>
             <div class="photo-section">
                 <div class="photo-frame" id="mainPhotoTrigger">
-                    <img id="profilePhoto" src="https://placehold.co/400x400/ffe0e7/c44569?text=Sonyah+%E2%9D%A4%EF%B8%8F" alt="Photo de Sonyah">
+                    <img id="sary4.jpg" alt="Photo de Sonyah">
                 </div>
             </div>
             <div class="photo-caption"><i class="fas fa-camera"></i> Clique sur la photo pour un bisou magique + confettis !</div>
@@ -439,7 +439,7 @@
     function setupPhoto(){ let ph=document.getElementById('mainPhotoTrigger'),img=document.getElementById('profilePhoto'); if(ph){ ph.addEventListener('click',e=>{ notif('💋 Un bisou tendre pour toi, ma Sonyah !'); showBigKiss(); let r=ph.getBoundingClientRect(); startRain(false,true,{x:r.left+r.width/2,y:r.top+r.height/2}); img.style.transform='scale(1.08)'; setTimeout(()=>img.style.transform='',300); e.stopPropagation(); }); } }
     function setupDouble(){ document.body.addEventListener('dblclick',e=>{ startRain(true,true,{x:e.clientX,y:e.clientY}); notif('✨ Pluie de confettis magiques ✨'); showBigKiss(); }); }
     function setupBtn(){ let btn=document.getElementById('fireConfettiBtn'); if(btn){ btn.addEventListener('click',e=>{ megaConfettiBlast(); showBigKiss(); notif('🎉 CONFETTIS MAGIQUES ! Que ta fête soit inoubliable !'); let old=btn.innerHTML; btn.innerHTML='<i class="fas fa-heartbeat"></i> 🌟 AMOUR INFINI 🌟 <i class="fas fa-heartbeat"></i>'; setTimeout(()=>btn.innerHTML=old,1500); e.stopPropagation(); }); } }
-    function setupGallery(){ let gal=document.getElementById('galleryGrid'); let mems=[{url:"https://placehold.co/300x300/f9c6cf/c44569?text=Notre+premier+rendez-vous",leg:"💞 Premier regard"},{url:"https://placehold.co/300x300/fde2c4/c44569?text=Sonyah+&+toi",leg:"🌅 Nos rires"},{url:"https://placehold.co/300x300/fbc4c0/c44569?text=21+ans+%F0%9F%8E%82",leg:"🎂 21 bougies"},{url:"https://placehold.co/300x300/e8d0ff/c44569?text=Sonyah+Mon+amour",leg:"✨ Étoile filante"}]; mems.forEach(m=>{ let card=document.createElement('div'); card.className='memory-card'; card.innerHTML=`<img src="${m.url}" alt="souvenir"><p>${m.leg}</p>`; card.addEventListener('click',e=>{ notif('📸 Souvenir précieux, notre amour brille. ❤️'); showBigKiss(); let r=card.getBoundingClientRect(); startRain(false,true,{x:r.left+r.width/2,y:r.top+r.height/2}); e.stopPropagation(); }); gal.appendChild(card); }); }
+    function setupGallery(){ let gal=document.getElementById('galleryGrid'); let mems=[{url:"premRg.jpg",leg:"💞 Premier regard"},{url:"rire.jpg",leg:"🌅 Nos rires"},{url:"bougi.jpg",leg:"🎂 21 bougies"},{url:"etoile.jpg",leg:"✨ Étoile filante"}]; mems.forEach(m=>{ let card=document.createElement('div'); card.className='memory-card'; card.innerHTML=`<img src="${m.url}" alt="souvenir"><p>${m.leg}</p>`; card.addEventListener('click',e=>{ notif('📸 Souvenir précieux, notre amour brille. ❤️'); showBigKiss(); let r=card.getBoundingClientRect(); startRain(false,true,{x:r.left+r.width/2,y:r.top+r.height/2}); e.stopPropagation(); }); gal.appendChild(card); }); }
     
     window.addEventListener('load', () => {
         initConfettiCanvas();
